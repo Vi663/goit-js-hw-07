@@ -23,8 +23,8 @@ const imageList = images.flatMap((image) => {
   imgEl.width = 300;
   imgEl.classList.add('list-item__image');
 
-  itemEl.appendChild(imgEl);
-  galleryList.appendChild(itemEl);
+  itemEl.insertAdjacentElement('beforeend', imgEl);
+  galleryList.insertAdjacentElement('beforeend', itemEl);
   console.log(galleryList);
 
 });
