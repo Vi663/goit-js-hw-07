@@ -14,18 +14,9 @@ const images = [
 ];
 
 const galleryList = document.getElementById('gallery');
-const imageList = images.flatMap((image) => {
-  const itemEl = document.createElement('li');
-  const imgEl = document.createElement('img');
-  itemEl.classList.add('list-item');
-  imgEl.src = image.url;
-  imgEl.alt = image.alt;
-  imgEl.width = 300;
-  imgEl.classList.add('list-item__image');
+const imageList = images.map((image) => {
 
-  itemEl.insertAdjacentElement('beforeend', imgEl);
-  galleryList.insertAdjacentElement('beforeend', itemEl);
-  console.log(galleryList);
-
+galleryList.insertAdjacentHTML('beforeend', `<li class="list-item"><img class="list-item__image" src ="${image.url}" alt ="${image.alt}" width = 300></li>`);
 });
+
 galleryList.classList.add('list');

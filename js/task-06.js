@@ -1,10 +1,10 @@
 
 const inputEl = document.getElementById("validation-input");
-const inputLength = inputEl.getAttribute('data-length');
+const inputLength = Number(inputEl.getAttribute('data-length'));
 inputEl.addEventListener('blur', onInnputBlur);
 
 function onInnputBlur(event) {
-  if (event.target.value.length == inputLength) {
+  if (event.target.value.length === inputLength) {
     inputEl.classList.add('valid');
     inputEl.classList.remove('invalid');
   } else {
@@ -12,7 +12,7 @@ function onInnputBlur(event) {
     inputEl.classList.remove('valid');
   }
   console.log(event.target.value.length);
-  console.log(inputEl);
+  console.log(typeof inputEl);
 };
 console.log(inputLength);
 
